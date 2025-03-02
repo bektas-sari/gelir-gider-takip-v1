@@ -56,16 +56,6 @@ python app.py
 
 ---
 
-## 📊 Ekran Görüntüleri
-
-**Ana Sayfa:**
-![Bütçe Takip](https://via.placeholder.com/800x400.png?text=Ekran+G%C3%B6r%C3%BCnt%C3%BCs%C3%BC)
-
-**Grafik:**
-![Gelir-Gider Grafiği](https://via.placeholder.com/800x400.png?text=Gelir-Gider+Grafi%C4%9Fi)
-
----
-
 ## 🛠️ Geliştirme
 
 ### 📚 Yeni Özellikler Eklemek
@@ -100,7 +90,4 @@ MIT Lisansı altında dağıtılmaktadır.
 ## İletişim
 Mail: bektas.sari@gmail.com
 
-**✨ Finansal durumunuzu kontrol altına almak için bu uygulamayı kullanın! ✨**
-
-
-Bütçe Takip Uygulaması, günlük gelir ve giderlerinizi kolayca yönetmenizi sağlar. Gelir-gider girişleri yaparak finansal durumunuzu grafik üzerinden takip edebilir, işlem geçmişinizi detaylı şekilde görüntüleyebilirsiniz. Flask, Chart.js ve modern bir arayüz ile geliştirilmiştir. 
+**✨ Finansal durumunuzu kontrol altına almak için bu uygulamayı kullanın! ✨** 
