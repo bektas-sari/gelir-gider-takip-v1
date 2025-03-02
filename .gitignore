@@ -1,0 +1,13 @@
+# Sanal ortam dosyaları
+venv/
+
+# IDE ve sistem dosyaları
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.DS_Store
+Thumbs.db
+
+# Ortam değişkenleri
+.env

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Aylık Bütçe Takip Uygulaması</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Aylık Bütçe Takip Uygulaması</h1>
+
+  <!-- Grafik Alanı -->
+  <div class="chart-container">
+    <canvas id="balanceChart"></canvas>
+  </div>
+
+  <!-- Form -->
+  <div class="form-container">
+    <h2>Yeni İşlem Ekle</h2>
+    <form method="POST">
+        <label for="day">Gün (1-31):</label>
+        <input type="number" name="day" id="day" min="1" max="31" required>
+        
+
+      <label for="desc">Açıklama:</label>
+      <input type="text" name="desc" id="desc" required>
+
+      <label for="amount">Miktar (TL):</label>
+      <input type="number" name="amount" id="amount" required>
+
+      <div class="radio-group">
+        <label><input type="radio" name="type" value="income" checked> Gelir</label>
+        <label><input type="radio" name="type" value="expense"> Gider</label>
+      </div>
+
+      <button type="submit">Ekle</button>
+    </form>
+  </div>
+
+  <!-- İşlem Tablosu -->
+  <div class="table-container">
+    <h2>İşlem Geçmişi</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Gün</th>
+          <th>Açıklama</th>
+          <th>Miktar (TL)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for tx in transactions %}
+        <tr>
+          <td>{{ tx.day }}</td>
+          <td>{{ tx.desc }}</td>
+          <td>
+            {% if tx.amount < 0 %}
+              <span style="color:red;">{{ tx.amount }}</span>
+            {% else %}
+              <span style="color:green;">+{{ tx.amount }}</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
